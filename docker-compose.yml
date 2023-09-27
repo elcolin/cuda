@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  cuda:
+    container_name: cuda
+    build:
+      context: ./src
+      dockerfile: Dockerfile
+    ports:
+      - "4200:4200"
+    volumes:
+      - cuda:/app
+    restart: on-failure
+
+volumes:
+  cuda:
+    driver: local
+    driver_opts:
+      type: 'none'
+      o: 'bind'
+      device: './volume/'
