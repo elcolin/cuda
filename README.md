@@ -29,7 +29,7 @@ To perform a grid-stride loop, you have to go forward with
 
 8 in our case.
 
-    for (int i = i = threadIdx.x + blockIdx.x * blockDim.x; i < DATA ; i += (blockIdx.x * blockDim.x))
+    for (int i = threadIdx.x + blockIdx.x * blockDim.x; i < DATA ; i += (blockIdx.x * blockDim.x))
 
 # Malloc Cuda
 
