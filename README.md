@@ -2,6 +2,9 @@
 Getting started with CUDA: C++/C
 
     function<<<2, 4>>>()
+     
+      threadsPerBlock = 256;
+      numberOfBlocks = (N + threadsPerBlock - 1) / threadsPerBlock;
 
 # General Information
 
