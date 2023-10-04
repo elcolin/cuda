@@ -30,3 +30,23 @@ To perform a grid-stride loop, you have to go forward with
 8 in our case.
 
     for (int i = threadIdx.x; i < DATA ; i += (blockIdx.c * blockDim.x))
+
+# Errors
+
+## Type
+    cudaError_t Err;
+
+## ASynchronized Error
+Occurs during kernel bad execution, can be retrieved by getting **cudaDeviceSynchronize()** return value.
+
+    cudaError_t AsyncErr = cudaDeviceSynchronize();
+
+## Synchronized Error
+Occurs during kernel launch, such as too many requested threads or blocks, can be retrieved with **cudaGetLastError()** return value.
+
+    cudaError_t syncErr = cudaGetLastError();
+
+## Display Error
+
+        if(Err != cudaSuccess)
+            printf("%s\n", cudaGetErrorString(Err));
