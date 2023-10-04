@@ -31,6 +31,14 @@ To perform a grid-stride loop, you have to go forward with
 
     for (int i = threadIdx.x; i < DATA ; i += (blockIdx.c * blockDim.x))
 
+# Malloc Cuda
+
+    cudaMalloc(void *a, size_t size);
+
+## Free
+
+    cudaFree(a);
+
 # Errors
 
 ## Type
