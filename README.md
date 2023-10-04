@@ -33,7 +33,7 @@ To perform a grid-stride loop, you have to go forward with
 
 # Malloc Cuda
 
-    cudaMalloc(void *a, size_t size);
+    cudaMallocManaged(void *a, size_t size);
 
 ## Free
 
