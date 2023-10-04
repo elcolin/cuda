@@ -58,3 +58,14 @@ Occurs during kernel launch, such as too many requested threads or blocks, can b
 
         if(Err != cudaSuccess)
             printf("%s\n", cudaGetErrorString(Err));
+
+### Fucntion example
+
+    inline cudaError_t checkCuda(cudaError_t result)
+    {
+      if (result != cudaSuccess) {
+        fprintf(stderr, "CUDA Runtime Error: %s\n", cudaGetErrorString(result));
+        assert(result == cudaSuccess);
+      }
+      return result;
+    }
