@@ -1,4 +1,4 @@
-# cuda
+  # cuda
 Getting started with CUDA: C++/C
 
     function<<<2, 4>>>()
@@ -80,9 +80,7 @@ Occurs during kernel launch, such as too many requested threads or blocks, can b
 
 __global__ void matrixMulGPU( int * a, int * b, int * c )
 {
-  /*
-   * Build out this kernel.
-   */
+  
 }
 
 /*
