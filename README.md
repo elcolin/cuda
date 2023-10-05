@@ -81,3 +81,4 @@ dim3 foo(x, y, z);
 
     myKernel<<<number_of_blocks, threads_per_block>>>(...);
 
+    ((N / threads_per_block.x) + 1, (N / threads_per_block.y) + 1, 1);
