@@ -82,3 +82,17 @@ dim3 foo(x, y, z);
     myKernel<<<number_of_blocks, threads_per_block>>>(...);
 
     ((N / threads_per_block.x) + 1, (N / threads_per_block.y) + 1, 1);
+
+# SMs
+
+    // Assuming `desiredGridDim` is your initial desired grid dimension
+    int numSMs;  // Number of SMs
+
+    // Get the number of SMs for the current device
+    cudaDeviceProp deviceProp;
+    cudaGetDeviceProperties(&deviceProp, 0);  // Assumes device 0
+    numSMs = deviceProp.multiProcessorCount;
+
+    // Adjust the grid dimension to be divisible by the number of SMs
+    int adjustedGridDim = (desiredGridDim / numSMs) * numSMs;
+
