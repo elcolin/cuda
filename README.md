@@ -96,3 +96,5 @@ dim3 foo(x, y, z);
     // Adjust the grid dimension to be divisible by the number of SMs
     int adjustedGridDim = (desiredGridDim / numSMs) * numSMs;
 
+    
+    !nsys profile --stats=true ./single-thread-vector-add
