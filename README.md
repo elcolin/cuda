@@ -98,3 +98,16 @@ dim3 foo(x, y, z);
 
     
     !nsys profile --stats=true ./single-thread-vector-add
+
+## Optimization
+
+    int maxThreadsPerBlock;  // Maximum threads per block for the GPU
+    int maxThreadsPerMultiprocessor;  // Maximum threads per multiprocessor for the GPU
+
+    cudaDeviceProp deviceProp;
+    cudaGetDeviceProperties(&deviceProp, 0);  // Get device properties for GPU 0
+
+    maxThreadsPerBlock = deviceProp.maxThreadsPerBlock;
+    maxThreadsPerMultiprocessor = deviceProp.maxThreadsPerMultiProcessor;
+
+    int maxBlocksPerMultiprocessor = maxThreadsPerMultiprocessor / maxThreadsPerBlock;
