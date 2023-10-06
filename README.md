@@ -83,6 +83,33 @@ dim3 foo(x, y, z);
 
     ((N / threads_per_block.x) + 1, (N / threads_per_block.y) + 1, 1);
 
+# Device Properties
+
+    #include <stdio.h>
+  
+    int main()
+    {
+      /*
+       * Assign values to these variables so that the output string below prints the
+       * requested properties of the currently active GPU.
+       */
+
+       cudaDeviceProp deviceProp;
+       cudaGetDeviceProperties(&deviceProp, 0);
+      int deviceId = deviceProp.pciDeviceID;
+      int computeCapabilityMajor = deviceProp.major;
+      int computeCapabilityMinor = deviceProp.minor;
+      int multiProcessorCount = deviceProp.multiProcessorCount;
+      int warpSize = deviceProp.warpSize;
+
+      /*
+       * There should be no need to modify the output string below.
+       */
+
+      printf("Device ID: %d\nNumber of SMs: %d\nCompute Capability Major: %d\nCompute Capability Minor: %d\nWarp     Size: %d\n", deviceId, multiProcessorCount, computeCapabilityMajor, computeCapabilityMinor, warpSize);
+      }
+
+
 # SMs
 
     // Assuming `desiredGridDim` is your initial desired grid dimension
