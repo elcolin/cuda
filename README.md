@@ -84,6 +84,11 @@ dim3 foo(x, y, z);
     ((N / threads_per_block.x) + 1, (N / threads_per_block.y) + 1, 1);
 
 # Device Properties
+Get the properties of the device with **cudaDeviceProp** class.
+
+    cudaGetDeviceProperties(&deviceProp, 0);
+
+0 stands for the first CUDA device assuming there can be several.
 
     #include <stdio.h>
   
