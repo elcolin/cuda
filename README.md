@@ -115,6 +115,10 @@ Get the properties of the device with **cudaDeviceProp** class.
     numSMs = deviceProp.multiProcessorCount;
     int adjustedGridDim = (desiredGridDim / numSMs) * numSMs;
 
+Good practice:
+
+    int number_of_blocks = (N + threads_per_block - 1) / threads_per_block; // Adjusted block calculation
+
 ## Optimization
 
     int maxThreadsPerBlock;  // Maximum threads per block for the GPU
