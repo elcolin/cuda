@@ -142,7 +142,7 @@ Good practice:
                                                                   // built-in CUDA variable.
 
 
-#Rules Governing the Behavior of CUDA Streams
+# Rules Governing the Behavior of CUDA Streams
 There are a few rules, concerning the behavior of CUDA streams, that should be learned in order to utilize them effectively:
 
 Operations within a given stream occur in order.
