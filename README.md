@@ -145,6 +145,6 @@ Good practice:
 # Rules Governing the Behavior of CUDA Streams
 There are a few rules, concerning the behavior of CUDA streams, that should be learned in order to utilize them effectively:
 
-Operations within a given stream occur in order.
-Operations in different non-default streams are not guaranteed to operate in any specific order relative to each other.
-The default stream is blocking and will both wait for all other streams to complete before running, and, will block other streams from running until it completes.
+  Operations within a given stream occur in order.
+  Operations in different non-default streams are not guaranteed to operate in any specific order relative to each other.
+  The default stream is blocking and will both wait for all other streams to complete before running, and, will block other streams   from running until it completes.
